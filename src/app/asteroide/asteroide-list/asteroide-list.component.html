@@ -1,0 +1,47 @@
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate placeholder="Start date"  #dateRangeStart>
+          <input matEndDate placeholder="End date" #dateRangeEnd
+          (dateChange)="dateRangeChange(dateRangeStart, dateRangeEnd)">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+
+
+       <h1>{{startDay}}</h1> 
+      <h1>{{endDay}}</h1> 
+      
+      <table class="mat-table " *ngFor="let asteDate of asteroidByDate; let i=index;" >
+        <th>{{getDate(i)}}</th>
+        <tr class="mat-header-row">
+          <!-- <th class="mat-header-cell"><b>{{getDate(i)}}</b></th> -->
+          <th class="mat-header-cell"><b>Nom</b></th>
+          <th class="mat-header-cell"><b>Diamètre estimé maximum</b></th>
+          <th class="mat-header-cell"><b>Diamètre estimé minimum</b></th>
+          <th class="mat-header-cell"><b>Date d'approche</b></th>
+          <th class="mat-header-cell"><b>Heure d'approche approximative</b></th>
+          <th class="mat-header-cell"><b>vitesse en km/h</b></th>
+        </tr>
+        <tr class="mat-row" *ngFor="let aste of asteDate">
+          <td class="mat-cell" >{{aste.name}}</td>
+          <td class="mat-cell"> {{aste.estimated_diameter.meters.estimated_diameter_max}} mètres</td>
+          <td class="mat-cell"> {{aste.estimated_diameter.meters.estimated_diameter_min}} mètres</td>
+          <td class="mat-cell"> {{aste.close_approach_data[0].close_approach_date}}</td>
+          <td class="mat-cell"> {{aste.close_approach_data[0].close_approach_date_full | slice:11:20}}</td>
+          <td class="mat-cell"> {{aste.close_approach_data[0].relative_velocity.kilometers_per_hour | number:'1.2-2' }}</td>
+        </tr>
+      </table>
+      
+    <!-- <ul *ngFor="let asteDate of asteroidByDate; let i=index;">
+        <li><b>{{getDate(i)}}</b></li>
+        <li *ngFor="let aste of asteDate">
+            <p>{{aste.name}}</p>
+        </li>
+    </ul> -->
+
+    

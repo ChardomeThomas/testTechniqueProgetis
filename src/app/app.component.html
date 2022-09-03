@@ -1,0 +1,23 @@
+<!-- 
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/astronomy_picture_of_the_day">APOD</a>
+  <a routerLink="/liste_asteroide">liste astéroide</a>
+  <a routerLink="/asteroide_proche">astéroide proche</a>
+  </nav> -->
+  <mat-toolbar color="primary">
+    <span>My Application</span>
+    <button mat-button routerLink="/dashboard">Dashboard</button>
+    <button mat-button routerLink="/astronomy_picture_of_the_day">APOD</button>
+    <button mat-button [matMenuTriggerFor]="beforeMenu">Asteroide</button>
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+      <button mat-menu-item routerLink="/liste_asteroide">liste astéroide</button>
+      <button mat-menu-item routerLink="/asteroide_proche">astéroide proche</button>
+    </mat-menu>
+  </mat-toolbar>
+
+
+
+
+
+<router-outlet></router-outlet>
