@@ -1,5 +1,4 @@
 
-
 export interface Photo{
     id: number;
     sol: number;
