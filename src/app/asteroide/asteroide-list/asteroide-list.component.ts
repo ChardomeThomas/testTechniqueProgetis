@@ -31,7 +31,6 @@ export class AsteroideListComponent implements OnInit {
   endDay: string ='';
 
   ngOnInit(): void {
-    // this.getAste();
   }
   dateRangeChange(dateRangeStart: HTMLInputElement, dateRangeEnd: HTMLInputElement) {
     // console.log(dateRangeStart.value);
@@ -41,16 +40,16 @@ export class AsteroideListComponent implements OnInit {
     this.eDate = dateRangeEnd.value;
     const [ monthStart, dayStart, yearStart] = this.sDate.split('/');
     const [ monthEnd, dayEnd, yearEnd] = this.eDate.split('/');
-    let startDay = [yearStart, monthStart, dayStart].join('-');
-    let endDay = [yearEnd, monthEnd, dayEnd].join('-');
-    console.log(startDay);
-    console.log(endDay);
+    this.startDay = [yearStart, monthStart, dayStart].join('-');
+    this.endDay = [yearEnd, monthEnd, dayEnd].join('-');
+    console.log(this.startDay);
+    console.log(this.endDay);
     this.getAste();
   }
   getAste(){
     this.AsteroideApiService.getAste(this.startDay, this.endDay).subscribe(aste => {
        this.asteroideList = aste;
-        console.log(aste);
+        // console.log(aste);
         this.asteroidByDate=Object.keys(this.asteroideList.near_earth_objects).map(key => {
           return this.asteroideList.near_earth_objects[key];
         } )

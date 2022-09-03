@@ -15,9 +15,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    DashboardComponent,
-    AsteroideListComponent,
-    AsteroideProcheComponent,
+    // DashboardComponent,
+    // AsteroideListComponent,
+    // AsteroideProcheComponent,
     
   ],
   imports: [
