@@ -10,9 +10,11 @@ export class DashboardApiService {
   constructor(
     private http:HttpClient,
   ) { }
+    
 
-  getPhoto(): Observable<Photo> {
-    return this.http.get<Photo>(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=IJsmUPP0D9kr1s10aUbDqDLHU0ztJxOiZwXAyGRI`
-    );
-}
+  getPhoto(rover: string): Observable<Photo> {
+    
+    return this.http.get<Photo>(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=2009-6-3&api_key=IJsmUPP0D9kr1s10aUbDqDLHU0ztJxOiZwXAyGRI`
+    );}
+
 }

@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent},
   { path: 'astronomy_picture_of_the_day', component: APODComponent},
   { path: 'liste_asteroide', component: AsteroideListComponent},
-  { path: 'asteroide_proche', component: AsteroideProcheComponent},
+  // { path: 'asteroide_proche', component: AsteroideProcheComponent},
 ];
 
 @NgModule({

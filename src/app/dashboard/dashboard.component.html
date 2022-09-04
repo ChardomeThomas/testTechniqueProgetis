@@ -1,9 +1,53 @@
-<p>dashboard works!</p>
+<section class="example-section">
+  <label class="example-margin"
+    >Choisissez les photos du Rover que vous voulez voir:</label
+  >
+  <mat-radio-group
+    (change)="onChange($event)"
+    [(ngModel)]="rov"
+    name="status"
+    ngModel
+    #status="ngModel"
+  >
+    <mat-radio-button class="example-margin" value="Opportunity" #rover
+      >Opportunity</mat-radio-button
+    >
+    <mat-radio-button class="example-margin" value="Curiosity" #rover
+      >Curiosity</mat-radio-button
+    >
+    <mat-radio-button class="example-margin" value="Spirit" #rover
+      >Spirit</mat-radio-button
+    >
+  </mat-radio-group>
+</section>
+<!-- tentative de date picker pour le call de l'api -->
+<!-- <mat-form-field class="form" appearance="fill">
+  <mat-label>Choose a date</mat-label>
+  <input matInput #Datedebut [matDatepicker]="picker" (dateChange)="getDate(Datedebut)">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+</mat-form-field>  -->
 
-<!-- <ul>
-    <li *ngFor="let photos of photo ">
-        <p>{{photos.id}}</p>
-    </li>
-</ul> -->
-
-  
+<div class="conteneur">
+  <mat-card *ngFor="let phot of rootobject.photos" class="card">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title>Rover: {{ phot.rover.name }}</mat-card-title>
+      <mat-card-subtitle>
+        <p>date de la prise de la photo: {{ phot.earth_date }}</p>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <img mat-card-image [src]="phot.img_src" [alt]="phot.title" />
+      <p>nom de la camera: {{ phot.camera.name }}</p>
+      <p>nom complet: {{ phot.camera.full_name }}</p>
+      <p>photo prise le {{ phot.sol }}ème jour solaire sur mars</p>
+    </mat-card-content>
+  </mat-card>
+  <!-- <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator> -->
+</div>

@@ -16,15 +16,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
-
-
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatButtonToggleGroup, MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatBadgeModule} from '@angular/material/badge';
+import { MatCardModule } from '@angular/material/card';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
     AppComponent,
     AsteroideProcheComponent,
-    AsteroideListComponent
+    AsteroideListComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +52,13 @@ import { MatTableModule } from '@angular/material/table';
     MatButtonModule,
     MatFormFieldModule,
     MatRippleModule,
+    MatCheckboxModule,
+    MatButtonToggleModule,
+    MatBadgeModule,
+    MatCardModule,
+    MatRadioModule,
+    MatInputModule,
+    MatPaginatorModule
     
   ],
   providers: [],

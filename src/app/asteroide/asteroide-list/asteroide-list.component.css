@@ -1,7 +1,11 @@
 a {
     margin : 50px;
 }
-
+h2{
+  width:100%;
+  border-bottom:2px solid #CCC;
+  border-right:2px solid #CCC;
+}
 .date{
     display:block;
     margin-left: auto;
@@ -13,12 +17,14 @@ a {
     justify-content: center;
     margin-top:50px;
 }
-
 .demo-table {
-    width: 100%;
-    position:relative;
-    margin-top:100px;
+  width: 80%;
+  position: relative;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
   }
+
   
   .mat-column-demo-position {
     width: 32px;
@@ -41,3 +47,6 @@ a {
     text-align: center;
     font-weight: bold;
   }
+  .mat-cell{
+    padding: 10px;
+    }

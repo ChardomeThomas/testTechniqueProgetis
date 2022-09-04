@@ -1,0 +1,12 @@
+.card {
+    max-width: 30%;
+    width: 400px;
+    margin-top: 50px;
+  }
+.conteneur{
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
